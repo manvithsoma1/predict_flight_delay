@@ -1,0 +1,46 @@
+# Write the full .gitignore in one command
+@"
+# Virtual environment
+venv/
+
+# Secrets - NEVER commit
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Data files - too large for GitHub
+data/raw/*.csv
+data/raw/*.CSV
+data/processed/
+
+# Trained models
+models/*.json
+models/*.txt
+models/*.pkl
+
+# MLflow
+mlflow/mlflow.db
+
+# Logs
+logs/*.log
+
+# dbt build artifacts
+dbt/target/
+dbt/dbt_packages/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+"@ | Set-Content .gitignore
+
+# Verify it was written
+Get-Content .gitignore
