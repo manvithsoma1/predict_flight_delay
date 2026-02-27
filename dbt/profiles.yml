@@ -1,0 +1,12 @@
+flight_delay:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      password: "postgres"
+      port: 5432
+      dbname: flightdb_local
+      schema: public
+      threads: 4
